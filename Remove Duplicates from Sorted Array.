@@ -1,0 +1,21 @@
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
+Leet code problem
+
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        
+        if(nums != []):     # check if list is empty
+            value = nums[0]
+            index = 1
+            
+            for num in nums:        #loop for list
+                
+                if(num != value):   # check if the num not repeated 
+                    nums[index] = num   #swap new value to next non repeated index
+                    index += 1          # increase the counter of not repeated
+                    value = num         # value = new value non repeated
+                    
+            return index                #return index variable numbers count
+            

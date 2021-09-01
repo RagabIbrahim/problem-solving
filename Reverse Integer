@@ -1,0 +1,32 @@
+class Solution:
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        if x > 0:       # if number is positive
+            s = str(x)
+            if s[0] == '0':
+                s = s[1:]
+            
+            s = s[::-1]             # reverse the string
+            if int(s) > 2147483641:
+                return 0
+            else:
+                return int(s)
+            
+        elif x == 0:    # if number is zero
+            return x
+        
+        else:           # if number is negative
+            s2 = str(x)
+            if s2[1] == '0':
+                s2 = s2[2:]
+            else:
+                s2 = s2[1:]
+            s2 = s2[::-1]
+            if int(s2) > 2147483641:
+                return 0
+            else:
+                return int(s2) - 2 * int(s2)
+        
